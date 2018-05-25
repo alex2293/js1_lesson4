@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var a = +prompt("Введите число от 0 до 999");
+    var obj={};
+    function parsItem(number) {
+        var item = [];
+        while (number) {
+            item.push(number % 10);
+            number = Math.floor(number/10);
+        }
+        return item;
+     }
+     if (a>999 || isNaN(a)){
+        console.log("Введите корректные данные");
+        console.log(obj);
+        }   
+    else 
+        {
+        var item = parsItem(a);
+        for (var i = 0; i <= item.length; i++) {
+            switch  (i){
+                case 0: obj.единицы=item[0];
+                    break;
+                case 1: obj.десятки=item[1];
+                    break;
+                case 2: obj.сотни=item[2];
+                    break;
+                }
+            } 
+            console.log(obj);  
+        }            
+         
+
+    </script>
+  
+</body>
+</html>
